@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" database="SqlServer" id="SqlServer-1fc5" >
+	<schema name="dbo" catalogname="Game_Changers" >
+		<table name="all_nba_players_status" row_count="0" spec="" >
+			<column name="Player_ID" type="int" jt="4" mandatory="y" />
+			<column name="Full_Name" type="varchar" length="50" jt="12" />
+			<column name="Status" type="varchar" length="10" jt="12" />
+			<index name="pk_all_nba_players_status" unique="PRIMARY_KEY" >
+				<column name="Player_ID" />
+			</index>
+		</table>
+		<table name="cleaned_draft_combine_stats" row_count="0" spec="" >
+			<column name="draft_combine_stats" type="int" jt="4" mandatory="y" >
+				<identity><![CDATA[IDENTITY]]></identity>
+			</column>
+			<column name="season" type="int" jt="4" />
+			<column name="player_id" type="int" jt="4" />
+			<column name="position" type="varchar" length="6" jt="12" />
+			<column name="height_w_shoes" type="numeric" length="6" decimal="2" jt="2" />
+			<column name="height_w_shoes_ft_in" type="varchar" length="13" jt="12" />
+			<column name="weight" type="numeric" length="6" decimal="1" jt="2" />
+			<column name="standing_vertical_leap" type="numeric" length="6" decimal="2" jt="2" />
+			<column name="max_vertical_leap" type="numeric" length="5" decimal="1" jt="2" />
+			<index name="pk_draft_combine_stats" unique="PRIMARY_KEY" spec=" CLUSTERED" >
+				<column name="draft_combine_stats" options=" asc" />
+			</index>
+			<fk name="fk_cleaned_draft_combine_stats_all_nba_players_status" to_schema="Game_Changers.dbo" to_table="all_nba_players_status" >
+				<fk_column name="player_id" pk="Player_ID" />
+			</fk>
+		</table>
+		<table name="cleaned_draft_history" row_count="0" spec="" >
+			<column name="draft_history_id" type="int" jt="4" mandatory="y" >
+				<identity><![CDATA[IDENTITY]]></identity>
+			</column>
+			<column name="person_id" type="int" jt="4" />
+			<column name="player_name" type="varchar" length="31" jt="12" />
+			<column name="season" type="int" jt="4" />
+			<column name="round_number" type="int" jt="4" />
+			<column name="round_pick" type="int" jt="4" />
+			<column name="overall_pick" type="int" jt="4" />
+			<column name="draft_type" type="varchar" length="6" jt="12" />
+			<column name="team_id" type="int" jt="4" />
+			<column name="team_city" type="varchar" length="32" jt="12" />
+			<column name="team_name" type="varchar" length="16" jt="12" />
+			<column name="team_abbreviation" type="varchar" length="3" jt="12" />
+			<column name="organization" type="varchar" length="50" jt="12" />
+			<column name="organization_type" type="varchar" length="23" jt="12" />
+			<column name="player_profile_flag" type="int" jt="4" />
+			<column name="id" type="int" jt="4" />
+			<column name="full_name" type="varchar" length="31" jt="12" />
+			<index name="pk_draft_history" unique="PRIMARY_KEY" spec=" CLUSTERED" >
+				<column name="draft_history_id" options=" asc" />
+			</index>
+			<fk name="fk_cleaned_draft_history_all_nba_players_status" to_schema="Game_Changers.dbo" to_table="all_nba_players_status" >
+				<fk_column name="person_id" pk="Player_ID" />
+			</fk>
+		</table>
+		<table name="cleaned_player_average_stats_2015_2022" >
+			<column name="player_average_stats_id" type="int" jt="4" mandatory="y" >
+				<identity><![CDATA[IDENTITY]]></identity>
+			</column>
+			<column name="PLAYER_ID" type="int" jt="4" />
+			<column name="TEAM_ID" type="int" jt="4" />
+			<column name="AGE" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="GP" type="int" jt="4" />
+			<column name="W" type="int" jt="4" />
+			<column name="L" type="int" jt="4" />
+			<column name="W_PCT" type="numeric" length="6" decimal="3" jt="2" />
+			<column name="MIN" type="real" jt="7" />
+			<column name="FGM" type="int" jt="4" />
+			<column name="FGA" type="int" jt="4" />
+			<column name="FG_PCT" type="numeric" length="6" decimal="3" jt="2" />
+			<column name="FG3M" type="int" jt="4" />
+			<column name="FG3A" type="int" jt="4" />
+			<column name="FG3_PCT" type="numeric" length="6" decimal="3" jt="2" />
+			<column name="FTM" type="int" jt="4" />
+			<column name="FTA" type="int" jt="4" />
+			<column name="FT_PCT" type="numeric" length="6" decimal="3" jt="2" />
+			<column name="OREB" type="int" jt="4" />
+			<column name="DREB" type="int" jt="4" />
+			<column name="REB" type="int" jt="4" />
+			<column name="AST" type="int" jt="4" />
+			<column name="TOV" type="int" jt="4" />
+			<column name="STL" type="int" jt="4" />
+			<column name="BLK" type="int" jt="4" />
+			<column name="BLKA" type="int" jt="4" />
+			<column name="PF" type="int" jt="4" />
+			<column name="PFD" type="int" jt="4" />
+			<column name="PTS" type="int" jt="4" />
+			<column name="PLUS_MINUS" type="int" jt="4" />
+			<column name="NBA_FANTASY_PTS" type="numeric" length="7" decimal="1" jt="2" />
+			<column name="DD2" type="int" jt="4" />
+			<column name="TD3" type="int" jt="4" />
+			<column name="GP_RANK" type="int" jt="4" />
+			<column name="W_RANK" type="int" jt="4" />
+			<column name="L_RANK" type="int" jt="4" />
+			<column name="W_PCT_RANK" type="int" jt="4" />
+			<column name="MIN_RANK" type="int" jt="4" />
+			<column name="FGM_RANK" type="int" jt="4" />
+			<column name="FGA_RANK" type="int" jt="4" />
+			<column name="FG_PCT_RANK" type="int" jt="4" />
+			<column name="FG3M_RANK" type="int" jt="4" />
+			<column name="FG3A_RANK" type="int" jt="4" />
+			<column name="FG3_PCT_RANK" type="int" jt="4" />
+			<column name="FTM_RANK" type="int" jt="4" />
+			<column name="FTA_RANK" type="int" jt="4" />
+			<column name="FT_PCT_RANK" type="int" jt="4" />
+			<column name="OREB_RANK" type="int" jt="4" />
+			<column name="DREB_RANK" type="int" jt="4" />
+			<column name="REB_RANK" type="int" jt="4" />
+			<column name="AST_RANK" type="int" jt="4" />
+			<column name="TOV_RANK" type="int" jt="4" />
+			<column name="STL_RANK" type="int" jt="4" />
+			<column name="BLK_RANK" type="int" jt="4" />
+			<column name="BLKA_RANK" type="int" jt="4" />
+			<column name="PF_RANK" type="int" jt="4" />
+			<column name="PFD_RANK" type="int" jt="4" />
+			<column name="PTS_RANK" type="int" jt="4" />
+			<column name="PLUS_MINUS_RANK" type="int" jt="4" />
+			<column name="NBA_FANTASY_PTS_RANK" type="int" jt="4" />
+			<column name="DD2_RANK" type="int" jt="4" />
+			<column name="TD3_RANK" type="int" jt="4" />
+			<column name="WNBA_FANTASY_PTS_RANK" type="int" jt="4" />
+			<column name="SEASON" type="int" jt="4" />
+			<column name="SEASON_TYPE" type="varchar" length="18" jt="12" />
+			<column name="Status" type="varchar" length="10" jt="12" />
+			<index name="pk_player_average_stats" unique="PRIMARY_KEY" >
+				<column name="player_average_stats_id" />
+			</index>
+			<fk name="fk_cleaned_player_average_stats_2015_2022_all_nba_players_status" to_schema="Game_Changers.dbo" to_table="all_nba_players_status" >
+				<fk_column name="PLAYER_ID" pk="Player_ID" />
+			</fk>
+			<fk name="fk_cleaned_player_average_stats_2015_2022_cleaned_team" to_schema="Game_Changers.dbo" to_table="cleaned_team" >
+				<fk_column name="TEAM_ID" pk="id" />
+			</fk>
+		</table>
+		<table name="cleaned_player_game_stats_2015_2022" row_count="0" spec="" >
+			<column name="player_game_stats_id" type="int" jt="4" mandatory="y" >
+				<identity><![CDATA[IDENTITY]]></identity>
+			</column>
+			<column name="GAME_ID" type="int" jt="4" />
+			<column name="TEAM_ID" type="int" jt="4" />
+			<column name="TEAM_ABBREVIATION" type="varchar" length="3" jt="12" />
+			<column name="TEAM_CITY" type="varchar" length="22" jt="12" />
+			<column name="PLAYER_ID" type="int" jt="4" />
+			<column name="START_POSITION" type="varchar" length="2" jt="12" />
+			<column name="MIN" type="varchar" length="6" jt="12" />
+			<column name="FGM" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="FGA" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="FG_PCT" type="numeric" length="6" decimal="3" jt="2" />
+			<column name="FG3M" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="FG3A" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="FG3_PCT" type="numeric" length="6" decimal="3" jt="2" />
+			<column name="FTM" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="FTA" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="FT_PCT" type="numeric" length="6" decimal="3" jt="2" />
+			<column name="OREB" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="DREB" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="REB" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="AST" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="STL" type="float" length="3" jt="8" />
+			<column name="BLK" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="TO" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="PF" type="numeric" length="3" decimal="1" jt="2" />
+			<column name="PTS" type="numeric" length="5" decimal="1" jt="2" />
+			<column name="PLUS_MINUS" type="numeric" length="6" decimal="1" jt="2" />
+			<column name="SEASON" type="int" jt="4" />
+			<column name="SEASON_TYPE" type="varchar" length="18" jt="12" />
+			<index name="pk_player_game_stats" unique="PRIMARY_KEY" spec=" CLUSTERED" >
+				<column name="player_game_stats_id" options=" asc" />
+			</index>
+			<fk name="fk_cleaned_player_game_stats_2015_2022_all_nba_players_status" to_schema="Game_Changers.dbo" to_table="all_nba_players_status" >
+				<fk_column name="PLAYER_ID" pk="Player_ID" />
+			</fk>
+			<fk name="fk_cleaned_player_game_stats_2015_2022_cleaned_team" to_schema="Game_Changers.dbo" to_table="cleaned_team" >
+				<fk_column name="TEAM_ID" pk="id" />
+			</fk>
+		</table>
+		<table name="cleaned_shot_chart_details" row_count="0" spec="" >
+			<column name="shot_chart_details_id" type="int" jt="4" mandatory="y" >
+				<identity><![CDATA[IDENTITY]]></identity>
+			</column>
+			<column name="GRID_TYPE" type="varchar" length="22" jt="12" />
+			<column name="GAME_ID" type="int" jt="4" />
+			<column name="GAME_EVENT_ID" type="int" jt="4" />
+			<column name="PLAYER_ID" type="int" jt="4" />
+			<column name="PLAYER_NAME" type="varchar" length="29" jt="12" />
+			<column name="TEAM_ID" type="int" jt="4" />
+			<column name="TEAM_NAME" type="varchar" length="28" jt="12" />
+			<column name="PERIOD" type="int" jt="4" />
+			<column name="MINUTES_REMAINING" type="int" jt="4" />
+			<column name="SECONDS_REMAINING" type="int" jt="4" />
+			<column name="EVENT_TYPE" type="varchar" length="11" jt="12" />
+			<column name="ACTION_TYPE" type="varchar" length="44" jt="12" />
+			<column name="SHOT_TYPE" type="varchar" length="18" jt="12" />
+			<column name="SHOT_ZONE_BASIC" type="varchar" length="27" jt="12" />
+			<column name="SHOT_ZONE_AREA" type="varchar" length="27" jt="12" />
+			<column name="SHOT_ZONE_RANGE" type="varchar" length="19" jt="12" />
+			<column name="SHOT_DISTANCE" type="int" jt="4" />
+			<column name="SHOT_ATTEMPTED_FLAG" type="int" jt="4" />
+			<column name="SHOT_MADE_FLAG" type="int" jt="4" />
+			<column name="HTM" type="varchar" length="3" jt="12" />
+			<column name="VTM" type="varchar" length="3" jt="12" />
+			<column name="SEASON" type="int" jt="4" />
+			<index name="pk_shot_chart_details" unique="PRIMARY_KEY" spec=" CLUSTERED" >
+				<column name="shot_chart_details_id" options=" asc" />
+			</index>
+			<fk name="fk_cleaned_shot_chart_details_all_nba_players_status" to_schema="Game_Changers.dbo" to_table="all_nba_players_status" >
+				<fk_column name="PLAYER_ID" pk="Player_ID" />
+			</fk>
+		</table>
+		<table name="cleaned_team" row_count="0" spec="" >
+			<column name="id" type="int" jt="4" mandatory="y" />
+			<column name="full_name" type="varchar" length="28" jt="12" />
+			<column name="abbreviation" type="varchar" length="3" jt="12" />
+			<column name="nickname" type="varchar" length="16" jt="12" />
+			<column name="city" type="varchar" length="16" jt="12" />
+			<column name="state" type="varchar" length="26" jt="12" />
+			<column name="year_founded" type="int" jt="4" />
+			<index name="pk_cleaned_team" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="cleaned_team_details" row_count="0" spec="" >
+			<column name="team_details_id" type="int" jt="4" mandatory="y" >
+				<identity><![CDATA[IDENTITY]]></identity>
+			</column>
+			<column name="team_id" type="int" jt="4" />
+			<column name="abbreviation" type="varchar" length="3" jt="12" />
+			<column name="nickname" type="varchar" length="16" jt="12" />
+			<column name="yearfounded" type="date" jt="91" />
+			<column name="city" type="varchar" length="16" jt="12" />
+			<column name="arena" type="varchar" length="31" jt="12" />
+			<column name="arenacapacity" type="numeric" length="9" decimal="1" jt="2" />
+			<column name="owner" type="varchar" length="37" jt="12" />
+			<column name="generalmanager" type="varchar" length="23" jt="12" />
+			<column name="headcoach" type="varchar" length="20" jt="12" />
+			<index name="pk_team_details_id" unique="PRIMARY_KEY" spec=" CLUSTERED" >
+				<column name="team_details_id" options=" asc" />
+			</index>
+			<fk name="fk_cleaned_team_details_cleaned_team" to_schema="Game_Changers.dbo" to_table="cleaned_team" >
+				<fk_column name="team_id" pk="id" />
+			</fk>
+		</table>
+		<table name="sysdiagrams" spec="" >
+			<comment><![CDATA[1]]></comment>
+			<column name="name" type="sysname" jt="12" mandatory="y" />
+			<column name="principal_id" type="int" jt="4" mandatory="y" />
+			<column name="diagram_id" type="int" jt="4" mandatory="y" >
+				<identity><![CDATA[IDENTITY]]></identity>
+			</column>
+			<column name="version" type="int" jt="4" />
+			<column name="definition" type="varbinary(max)" jt="-3" />
+			<index name="PK__sysdiagr__C2B05B61B48C192D" unique="PRIMARY_KEY" spec=" CLUSTERED" >
+				<column name="diagram_id" options=" asc" />
+			</index>
+			<index name="UK_principal_name" unique="UNIQUE_KEY" spec="      NONCLUSTERED" >
+				<column name="principal_id" options=" asc" />
+				<column name="name" options=" asc" />
+			</index>
+		</table>
+		<procedure name="sp_alterdiagram" id="Procedure-18f2" isSystem="false" params_known="y" >
+			<string><![CDATA[
+	CREATE PROCEDURE dbo.sp_alterdiagram
+	(
+		@diagramname 	sysname,
+		@owner_id	int	= null,
+		@version 	int,
+		@definition 	varbinary(max)
+	)
+	WITH EXECUTE AS 'dbo'
+	AS
+	BEGIN
+		set nocount on
+	
+		declare @theId 			int
+		declare @retval 		int
+		declare @IsDbo 			int
+		
+		declare @UIDFound 		int
+		declare @DiagId			int
+		declare @ShouldChangeUID	int
+	
+		if(@diagramname is null)
+		begin
+			RAISERROR ('Invalid ARG', 16, 1)
+			return -1
+		end
+	
+		execute as caller;
+		select @theId = DATABASE_PRINCIPAL_ID();	 
+		select @IsDbo = IS_MEMBER(N'db_owner'); 
+		if(@owner_id is null)
+			select @owner_id = @theId;
+		revert;
+	
+		select @ShouldChangeUID = 0
+		select @DiagId = diagram_id, @UIDFound = principal_id from dbo.sysdiagrams where principal_id = @owner_id and name = @diagramname 
+		
+		if(@DiagId IS NULL or (@IsDbo = 0 and @theId <> @UIDFound))
+		begin
+			RAISERROR ('Diagram does not exist or you do not have permission.', 16, 1);
+			return -3
+		end
+	
+		if(@IsDbo <> 0)
+		begin
+			if(@UIDFound is null or USER_NAME(@UIDFound) is null) -- invalid principal_id
+			begin
+				select @ShouldChangeUID = 1 ;
+			end
+		end
+		-- update dds data			
+		update dbo.sysdiagrams set definition = @definition where diagram_id = @DiagId ;
+		-- change owner
+		if(@ShouldChangeUID = 1)
+			update dbo.sysdiagrams set principal_id = @theId where diagram_id = @DiagId ;
+		-- update dds version
+		if(@version is not null)
+			update dbo.sysdiagrams set version = @version where diagram_id = @DiagId ;
+		return 0
+	END
+	]]></string>
+			<input_param name="@diagramname" jt="-9" type="sysname" inOut="1" />
+			<input_param name="@owner_id" jt="4" type="int" inOut="1" />
+			<input_param name="@version" jt="4" type="int" inOut="1" />
+			<input_param name="@definition" jt="-3" type="varbinary" inOut="1" />
+			<result_param name="@RETURN_VALUE" jt="4" type="int" />
+		</procedure>
+		<procedure name="sp_creatediagram" id="Procedure-1e4e" isSystem="false" params_known="y" >
+			<string><![CDATA[
+	CREATE PROCEDURE dbo.sp_creatediagram
+	(
+		@diagramname 	sysname,
+		@owner_id		int	= null, 	
+		@version 		int,
+		@definition 	varbinary(max)
+	)
+	WITH EXECUTE AS 'dbo'
+	AS
+	BEGIN
+		set nocount on
+	
+		declare @theId int
+		declare @retval int
+		declare @IsDbo	int
+		declare @userName sysname
+		if(@version is null or @diagramname is null)
+		begin
+			RAISERROR (N'E_INVALIDARG', 16, 1);
+			return -1
+		end
+	
+		execute as caller;
+		select @theId = DATABASE_PRINCIPAL_ID(); 
+		select @IsDbo = IS_MEMBER(N'db_owner');
+		revert; 
+		
+		if @owner_id is null
+		begin
+			select @owner_id = @theId;
+		end
+		else
+		begin
+			if @theId <> @owner_id
+			begin
+				if @IsDbo = 0
+				begin
+					RAISERROR (N'E_INVALIDARG', 16, 1);
+					return -1
+				end
+				select @theId = @owner_id
+			end
+		end
+		-- next 2 line only for test, will be removed after define name unique
+		if EXISTS(select diagram_id from dbo.sysdiagrams where principal_id = @theId and name = @diagramname)
+		begin
+			RAISERROR ('The name is already used.', 16, 1);
+			return -2
+		end
+	
+		insert into dbo.sysdiagrams(name, principal_id , version, definition)
+				VALUES(@diagramname, @theId, @version, @definition) ;
+		
+		select @retval = @@IDENTITY 
+		return @retval
+	END
+	]]></string>
+			<input_param name="@diagramname" jt="-9" type="sysname" inOut="1" />
+			<input_param name="@owner_id" jt="4" type="int" inOut="1" />
+			<input_param name="@version" jt="4" type="int" inOut="1" />
+			<input_param name="@definition" jt="-3" type="varbinary" inOut="1" />
+			<result_param name="@RETURN_VALUE" jt="4" type="int" />
+		</procedure>
+		<procedure name="sp_dropdiagram" id="Procedure-166c" isSystem="false" params_known="y" >
+			<string><![CDATA[
+	CREATE PROCEDURE dbo.sp_dropdiagram
+	(
+		@diagramname 	sysname,
+		@owner_id	int	= null
+	)
+	WITH EXECUTE AS 'dbo'
+	AS
+	BEGIN
+		set nocount on
+		declare @theId 			int
+		declare @IsDbo 			int
+		
+		declare @UIDFound 		int
+		declare @DiagId			int
+	
+		if(@diagramname is null)
+		begin
+			RAISERROR ('Invalid value', 16, 1);
+			return -1
+		end
+	
+		EXECUTE AS CALLER;
+		select @theId = DATABASE_PRINCIPAL_ID();
+		select @IsDbo = IS_MEMBER(N'db_owner'); 
+		if(@owner_id is null)
+			select @owner_id = @theId;
+		REVERT; 
+		
+		select @DiagId = diagram_id, @UIDFound = principal_id from dbo.sysdiagrams where principal_id = @owner_id and name = @diagramname 
+		if(@DiagId IS NULL or (@IsDbo = 0 and @UIDFound <> @theId))
+		begin
+			RAISERROR ('Diagram does not exist or you do not have permission.', 16, 1)
+			return -3
+		end
+	
+		delete from dbo.sysdiagrams where diagram_id = @DiagId;
+	
+		return 0;
+	END
+	]]></string>
+			<input_param name="@diagramname" jt="-9" type="sysname" inOut="1" />
+			<input_param name="@owner_id" jt="4" type="int" inOut="1" />
+			<result_param name="@RETURN_VALUE" jt="4" type="int" />
+		</procedure>
+		<procedure name="sp_helpdiagramdefinition" id="Procedure-1497" isSystem="false" params_known="y" >
+			<string><![CDATA[
+	CREATE PROCEDURE dbo.sp_helpdiagramdefinition
+	(
+		@diagramname 	sysname,
+		@owner_id	int	= null 		
+	)
+	WITH EXECUTE AS N'dbo'
+	AS
+	BEGIN
+		set nocount on
+		declare @theId 		int
+		declare @IsDbo 		int
+		declare @DiagId		int
+		declare @UIDFound	int
+	
+		if(@diagramname is null)
+		begin
+			RAISERROR (N'E_INVALIDARG', 16, 1);
+			return -1
+		end
+	
+		execute as caller;
+		select @theId = DATABASE_PRINCIPAL_ID();
+		select @IsDbo = IS_MEMBER(N'db_owner');
+		if(@owner_id is null)
+			select @owner_id = @theId;
+		revert; 
+	
+		select @DiagId = diagram_id, @UIDFound = principal_id from dbo.sysdiagrams where principal_id = @owner_id and name = @diagramname;
+		if(@DiagId IS NULL or (@IsDbo = 0 and @UIDFound <> @theId ))
+		begin
+			RAISERROR ('Diagram does not exist or you do not have permission.', 16, 1);
+			return -3
+		end
+		select version, definition FROM dbo.sysdiagrams where diagram_id = @DiagId ; 
+		return 0
+	END
+	]]></string>
+			<input_param name="@diagramname" jt="-9" type="sysname" inOut="1" />
+			<input_param name="@owner_id" jt="4" type="int" inOut="1" />
+			<result_param name="@RETURN_VALUE" jt="4" type="int" />
+		</procedure>
+		<procedure name="sp_helpdiagrams" id="Procedure-dea" isSystem="false" params_known="y" >
+			<string><![CDATA[
+	CREATE PROCEDURE dbo.sp_helpdiagrams
+	(
+		@diagramname sysname = NULL,
+		@owner_id int = NULL
+	)
+	WITH EXECUTE AS N'dbo'
+	AS
+	BEGIN
+		DECLARE @user sysname
+		DECLARE @dboLogin bit
+		EXECUTE AS CALLER;
+			SET @user = USER_NAME();
+			SET @dboLogin = CONVERT(bit,IS_MEMBER('db_owner'));
+		REVERT;
+		SELECT
+			[Database] = DB_NAME(),
+			[Name] = name,
+			[ID] = diagram_id,
+			[Owner] = USER_NAME(principal_id),
+			[OwnerID] = principal_id
+		FROM
+			sysdiagrams
+		WHERE
+			(@dboLogin = 1 OR USER_NAME(principal_id) = @user) AND
+			(@diagramname IS NULL OR name = @diagramname) AND
+			(@owner_id IS NULL OR principal_id = @owner_id)
+		ORDER BY
+			4, 5, 1
+	END
+	]]></string>
+			<input_param name="@diagramname" jt="-9" type="sysname" inOut="1" />
+			<input_param name="@owner_id" jt="4" type="int" inOut="1" />
+			<result_param name="@RETURN_VALUE" jt="4" type="int" />
+		</procedure>
+		<procedure name="sp_renamediagram" id="Procedure-1ffc" isSystem="false" params_known="y" >
+			<string><![CDATA[
+	CREATE PROCEDURE dbo.sp_renamediagram
+	(
+		@diagramname 		sysname,
+		@owner_id		int	= null,
+		@new_diagramname	sysname
+	
+	)
+	WITH EXECUTE AS 'dbo'
+	AS
+	BEGIN
+		set nocount on
+		declare @theId 			int
+		declare @IsDbo 			int
+		
+		declare @UIDFound 		int
+		declare @DiagId			int
+		declare @DiagIdTarg		int
+		declare @u_name			sysname
+		if((@diagramname is null) or (@new_diagramname is null))
+		begin
+			RAISERROR ('Invalid value', 16, 1);
+			return -1
+		end
+	
+		EXECUTE AS CALLER;
+		select @theId = DATABASE_PRINCIPAL_ID();
+		select @IsDbo = IS_MEMBER(N'db_owner'); 
+		if(@owner_id is null)
+			select @owner_id = @theId;
+		REVERT;
+	
+		select @u_name = USER_NAME(@owner_id)
+	
+		select @DiagId = diagram_id, @UIDFound = principal_id from dbo.sysdiagrams where principal_id = @owner_id and name = @diagramname 
+		if(@DiagId IS NULL or (@IsDbo = 0 and @UIDFound <> @theId))
+		begin
+			RAISERROR ('Diagram does not exist or you do not have permission.', 16, 1)
+			return -3
+		end
+	
+		-- if((@u_name is not null) and (@new_diagramname = @diagramname))	-- nothing will change
+		--	return 0;
+	
+		if(@u_name is null)
+			select @DiagIdTarg = diagram_id from dbo.sysdiagrams where principal_id = @theId and name = @new_diagramname
+		else
+			select @DiagIdTarg = diagram_id from dbo.sysdiagrams where principal_id = @owner_id and name = @new_diagramname
+	
+		if((@DiagIdTarg is not null) and  @DiagId <> @DiagIdTarg)
+		begin
+			RAISERROR ('The name is already used.', 16, 1);
+			return -2
+		end		
+	
+		if(@u_name is null)
+			update dbo.sysdiagrams set [name] = @new_diagramname, principal_id = @theId where diagram_id = @DiagId
+		else
+			update dbo.sysdiagrams set [name] = @new_diagramname where diagram_id = @DiagId
+		return 0
+	END
+	]]></string>
+			<input_param name="@diagramname" jt="-9" type="sysname" inOut="1" />
+			<input_param name="@owner_id" jt="4" type="int" inOut="1" />
+			<input_param name="@new_diagramname" jt="-9" type="sysname" inOut="1" />
+			<result_param name="@RETURN_VALUE" jt="4" type="int" />
+		</procedure>
+		<procedure name="sp_upgraddiagrams" id="Procedure-1ae5" isSystem="false" params_known="y" >
+			<string><![CDATA[
+	CREATE PROCEDURE dbo.sp_upgraddiagrams
+	AS
+	BEGIN
+		IF OBJECT_ID(N'dbo.sysdiagrams') IS NOT NULL
+			return 0;
+	
+		CREATE TABLE dbo.sysdiagrams
+		(
+			name sysname NOT NULL,
+			principal_id int NOT NULL,	-- we may change it to varbinary(85)
+			diagram_id int PRIMARY KEY IDENTITY,
+			version int,
+	
+			definition varbinary(max)
+			CONSTRAINT UK_principal_name UNIQUE
+			(
+				principal_id,
+				name
+			)
+		);
+
+		/* Add this if we need to have some form of extended properties for diagrams */
+		/*
+		IF OBJECT_ID(N'dbo.sysdiagram_properties') IS NULL
+		BEGIN
+			CREATE TABLE dbo.sysdiagram_properties
+			(
+				diagram_id int,
+				name sysname,
+				value varbinary(max) NOT NULL
+			)
+		END
+		*/
+		IF OBJECT_ID(N'dbo.dtproperties') IS NOT NULL
+		begin
+			insert into dbo.sysdiagrams
+			(
+				[name],
+				[principal_id],
+				[version],
+				[definition]
+			)
+			select	 
+				convert(sysname, dgnm.[uvalue]),
+				DATABASE_PRINCIPAL_ID(N'dbo'),			-- will change to the sid of sa
+				0,							-- zero for old format, dgdef.[version],
+				dgdef.[lvalue]
+			from dbo.[dtproperties] dgnm
+				inner join dbo.[dtproperties] dggd on dggd.[property] = 'DtgSchemaGUID' and dggd.[objectid] = dgnm.[objectid]	
+				inner join dbo.[dtproperties] dgdef on dgdef.[property] = 'DtgSchemaDATA' and dgdef.[objectid] = dgnm.[objectid]
+				
+			where dgnm.[property] = 'DtgSchemaNAME' and dggd.[uvalue] like N'_EA3E6268-D998-11CE-9454-00AA00A3F36E_' 
+			return 2;
+		end
+		return 1;
+	END
+	]]></string>
+			<result_param name="@RETURN_VALUE" jt="4" type="int" />
+		</procedure>
+		<function name="fn_diagramobjects" id="Function-2618" isSystem="false" params_known="y" >
+			<string><![CDATA[
+	CREATE FUNCTION dbo.fn_diagramobjects() 
+	RETURNS int
+	WITH EXECUTE AS N'dbo'
+	AS
+	BEGIN
+		declare @id_upgraddiagrams		int
+		declare @id_sysdiagrams			int
+		declare @id_helpdiagrams		int
+		declare @id_helpdiagramdefinition	int
+		declare @id_creatediagram	int
+		declare @id_renamediagram	int
+		declare @id_alterdiagram 	int 
+		declare @id_dropdiagram		int
+		declare @InstalledObjects	int
+		select @InstalledObjects = 0
+		select 	@id_upgraddiagrams = object_id(N'dbo.sp_upgraddiagrams'),
+			@id_sysdiagrams = object_id(N'dbo.sysdiagrams'),
+			@id_helpdiagrams = object_id(N'dbo.sp_helpdiagrams'),
+			@id_helpdiagramdefinition = object_id(N'dbo.sp_helpdiagramdefinition'),
+			@id_creatediagram = object_id(N'dbo.sp_creatediagram'),
+			@id_renamediagram = object_id(N'dbo.sp_renamediagram'),
+			@id_alterdiagram = object_id(N'dbo.sp_alterdiagram'), 
+			@id_dropdiagram = object_id(N'dbo.sp_dropdiagram')
+		if @id_upgraddiagrams is not null
+			select @InstalledObjects = @InstalledObjects + 1
+		if @id_sysdiagrams is not null
+			select @InstalledObjects = @InstalledObjects + 2
+		if @id_helpdiagrams is not null
+			select @InstalledObjects = @InstalledObjects + 4
+		if @id_helpdiagramdefinition is not null
+			select @InstalledObjects = @InstalledObjects + 8
+		if @id_creatediagram is not null
+			select @InstalledObjects = @InstalledObjects + 16
+		if @id_renamediagram is not null
+			select @InstalledObjects = @InstalledObjects + 32
+		if @id_alterdiagram  is not null
+			select @InstalledObjects = @InstalledObjects + 64
+		if @id_dropdiagram is not null
+			select @InstalledObjects = @InstalledObjects + 128
+		
+		return @InstalledObjects 
+	END
+	]]></string>
+			<result_param name="@RETURN_VALUE" jt="4" type="int" />
+		</function>
+	</schema>
+	<layout name="Main Layout" id="Layout-20af" show_relation="columns" >
+		<entity schema="Game_Changers.dbo" name="all_nba_players_status" color="BED3F4" x="528" y="704" />
+		<entity schema="Game_Changers.dbo" name="cleaned_draft_combine_stats" color="BED3F4" x="928" y="624" />
+		<entity schema="Game_Changers.dbo" name="cleaned_draft_history" color="C7F4BE" x="304" y="288" />
+		<entity schema="Game_Changers.dbo" name="cleaned_player_average_stats_2015_2022" color="3986C1" x="208" y="720" >
+			<column name="player_average_stats_id" />
+			<column name="PLAYER_ID" />
+			<column name="TEAM_ID" />
+			<column name="AGE" />
+			<column name="GP" />
+			<column name="W" />
+			<column name="L" />
+			<column name="W_PCT" />
+			<column name="MIN" />
+			<column name="FGM" />
+			<column name="FGA" />
+		</entity>
+		<entity schema="Game_Changers.dbo" name="cleaned_player_game_stats_2015_2022" color="C7F4BE" x="528" y="896" />
+		<entity schema="Game_Changers.dbo" name="cleaned_shot_chart_details" color="C7F4BE" x="544" y="192" />
+		<entity schema="Game_Changers.dbo" name="cleaned_team" color="C7F4BE" x="240" y="1008" />
+		<entity schema="Game_Changers.dbo" name="cleaned_team_details" color="C7F4BE" x="224" y="1264" />
+		<entity schema="Game_Changers.dbo" name="sysdiagrams" color="3986C1" x="1072" y="352" />
+		<callout x="48" y="80" pointer="Round" >
+			<comment><![CDATA[This is a layout. You can create multiple layouts with the same or different tables. 
+Double-click the table headers to edit.]]></comment>
+		</callout>
+		<group name="all_nba_players_status" color="ECF0F7" >
+			<entity schema="Game_Changers.dbo" name="cleaned_draft_combine_stats" />
+		</group>
+		<group name="cleaned_player_average_stats_2015_2022" color="EEF7EC" >
+			<entity schema="Game_Changers.dbo" name="cleaned_draft_history" />
+			<entity schema="Game_Changers.dbo" name="all_nba_players_status" />
+			<entity schema="Game_Changers.dbo" name="cleaned_team_details" />
+			<entity schema="Game_Changers.dbo" name="cleaned_team" />
+			<entity schema="Game_Changers.dbo" name="cleaned_shot_chart_details" />
+			<entity schema="Game_Changers.dbo" name="cleaned_player_game_stats_2015_2022" />
+			<entity schema="Game_Changers.dbo" name="cleaned_player_average_stats_2015_2022" />
+			<entity schema="Game_Changers.dbo" name="sysdiagrams" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-7b3" show_column_type="y" show_relation="columns" >
+		<entity schema="Game_Changers.dbo" name="all_nba_players_status" color="BED3F4" x="48" y="48" />
+		<entity schema="Game_Changers.dbo" name="cleaned_draft_combine_stats" color="BED3F4" x="304" y="48" />
+		<entity schema="Game_Changers.dbo" name="cleaned_draft_history" color="C7F4BE" x="704" y="144" />
+		<entity schema="Game_Changers.dbo" name="cleaned_player_game_stats_2015_2022" color="C7F4BE" x="992" y="880" />
+		<entity schema="Game_Changers.dbo" name="cleaned_shot_chart_details" color="C7F4BE" x="992" y="48" />
+		<entity schema="Game_Changers.dbo" name="cleaned_team" color="C7F4BE" x="992" y="560" />
+		<entity schema="Game_Changers.dbo" name="cleaned_team_details" color="C7F4BE" x="1248" y="560" />
+		<script name="SQL Editor" id="Editor-26f" language="SQL" >
+			<string><![CDATA[SELECT
+	nba_players_id, Player_ID, Full_Name, [Status]
+FROM
+	all_nba_players_status s;
+GO]]></string>
+		</script>
+		<browser id="Browse-17ce" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="Game_Changers.dbo" entity="all_nba_players_status" x="20" y="20" width="270" height="-60" />
+		</browser>
+		<query id="Query-9e8" name="Query Builder" >
+			<query_table schema="Game_Changers.dbo" name="all_nba_players_status" alias="anps" x="48" y="48" >
+				<column name="Player_ID" />
+				<column name="Full_Name" />
+				<column name="Status" />
+			</query_table>
+		</query>
+	</layout>
+</project>
