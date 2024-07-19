@@ -3,12 +3,12 @@
    <h1 style="text-align: center; color: blue;">Análisis de Datos de la NBA 🏀</h1>
 
  <p style="text-align: justify;">
-        Bienvenido a nuestro proyecto de análisis de datos centrado en la NBA. Este estudio ha sido diseñado para proporcionar información detallada sobre la dinámica de los traspasos en la liga, utilizando una base de datos robusta que ofrece insights valiosos para los profesionales del baloncesto.
+Bienvenido a nuestro proyecto de análisis de datos centrado en la NBA. Este estudio ha sido diseñado para proporcionar información detallada sobre la dinámica de los traspasos en la liga, utilizando una base de datos robusta que ofrece insights valiosos para los actores involucrados en el mercado de traspasdos tales como: entrenadores, directores deportivos y ojeadores
     </p>
 
   <h3 style="text-align: center; color: #333;">Contexto del Proyecto 🎯</h3>
    <p style="text-align: justify;">
-En la NBA, el baloncesto es cada vez más un juego de estrategia y táctica 🏀. Este análisis está dirigido a entrenadores, managers, coaching y scouts que buscan transformar su enfoque en la construcción y refuerzo de equipos mediante datos estratégicos. Nuestra misión es proporcionar datos estructurados y precisos que faciliten la toma de decisiones clave en la contratación de jugadores. Con nuestra ayuda, podrán mejorar significativamente el rendimiento de sus equipos y optimizar sus finanzas 💰, transformando cada decisión en una ventaja competitiva.
+En la NBA, el baloncesto es cada vez más un juego de estrategia y táctica 🏀. Este análisis está dirigido a entrenadores, directores deportivos y ojeadores que buscan transformar su enfoque en la construcción y refuerzo de equipos mediante datos para tomar decisiones informadas y efectivas. Nuestra misión es proporcionar datos estructurados y precisos que faciliten la toma de decisiones clave en la contratación de jugadores. Con nuestra ayuda, podrán mejorar significativamente el rendimiento de sus equipos y optimizar sus finanzas 💰, transformando cada decisión en una ventaja competitiva.
     </p>
 
   <h3 style="text-align: center; color: #333;">Nuestro Objetivo del Proyecto 🎯</h3>
@@ -31,7 +31,7 @@ Para cumplir con la premisa de "data a la mano", hemos desarrollado un dashboard
     
 <h2>Actividades Realizadas:</h2>
 <p>
-    El proceso de desarrollo que seguimos, basado en la propuesta inicial, está reflejado en nuestro diagrama de Gantt 📅, el cual puedes consultar en la sección "Project" ubicada en la barra de este repositorio.
+El proceso de desarrollo que seguimos, basado en la propuesta inicial, está reflejado en nuestro diagrama de Gantt 📅, el cual puedes consultar en la sección "Project" ubicada en la barra de este repositorio.
 </p>
 
 <h3>Nuestros Avances Fueron:</h3>
@@ -44,17 +44,17 @@ En esta fase, analizamos los componentes de nuestras tablas 📊, identificando 
     </li>
     <li><strong>Creación de Repositorio Público 🌐:</strong>
         <p>
-            Administramos y compartimos nuestra información mediante un repositorio público 💾, facilitando el acceso y la colaboración en nuestro proceso de trabajo. Además, nos ayudó a organizar y seguir un paso a paso detallado y a realizar el seguimiento de las tareas necesarias.
+Administramos y compartimos nuestra información mediante un repositorio público 💾, facilitando el acceso y la colaboración en nuestro proceso de trabajo. Además, nos ayudó a organizar y seguir un paso a paso detallado y a realizar el seguimiento de las tareas necesarias.
         </p>
     </li>
     <li><strong>EDA (Análisis Exploratorio de Datos) 📈:</strong>
         <p>
-            Este proceso implicó la limpieza de datos 🧹, asegurando la calidad del análisis. Filtramos cuidadosamente los datos necesarios para obtener insights cruciales e importantes para el desarrollo de los objetivos planteados, garantizando así que proporcionáramos datos de alta calidad al cliente.
+Este proceso implicó la limpieza de datos 🧹, asegurando la calidad del análisis. Filtramos cuidadosamente los datos necesarios para obtener insights cruciales e importantes para el desarrollo de los objetivos planteados, garantizando así que proporcionáramos datos de alta calidad al cliente.
         </p>
     </li>
     <li><strong>Creación de Base de Datos en SQL Server 💻:</strong>
         <p>
-            Desarrollamos la base de datos utilizando SQL Server, verificando el acceso de los integrantes 🔒, la compatibilidad de los datos obtenidos y realizando diagramas de entidad-relación basados en nuestro filtrado de datos. Esto nos permitió avanzar en el proceso y agregar información complementaria, así como crear las consultas necesarias para el análisis descriptivo de equipos, jugadores y la liga.
+Desarrollamos la base de datos utilizando SQL Server Management Studio, verificando el acceso de los integrantes 🔒, la compatibilidad de los datos obtenidos y realizando diagramas de entidad-relación basados en nuestro filtrado de datos. Esto nos permitió avanzar en el proceso y agregar información complementaria, así como crear las consultas necesarias para el análisis descriptivo de equipos, jugadores y la liga.
         </p>
       <a href="https://postimg.cc/TyRDdg5N">
         <img src="https://i.postimg.cc/3wGCZZ8h/esquema-actualizado-blanco.png" alt="esquema actualizado blanco" style="max-width:100%;">
