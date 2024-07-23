@@ -3,9 +3,11 @@ import pyodbc
 import boto3
 import pandas as pd
 from dotenv import load_dotenv
-
-# Cargar variables de entorno desde el archivo .env
-load_dotenv()
+# Manually set environment variables
+os.environ['DB_SERVER'] = 'gamechangers-pf.croaauuoulfc.sa-east-1.rds.amazonaws.com,1433'
+os.environ['DB_DATABASE'] = 'Game_Changers'
+os.environ['DB_USERNAME'] = 'admin'
+os.environ['DB_PASSWORD'] = 'Redsar050693'
 
 def connect_to_database():
     server = os.getenv('DB_SERVER')
