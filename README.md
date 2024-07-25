@@ -67,7 +67,7 @@ Desarrollamos la base de datos utilizando SQL Server Management Studio, verifica
     </li>
 </ol>
    <section id="contribuciones">
-        <h2 style="text-align: center; color: #333;">Actividades Realizadas 📊📱</h2>
+        <h2 style="text-align: center; color: #333;">Documentacion 📊📱</h2>
         <h3><strong>Sprint 1</strong></h3>
         <ol>
             <li>Creación del  repositorio público y compartirlo con el equipo</li>
@@ -193,4 +193,17 @@ El repositorio está disponible públicamente en GitHub en el siguiente enlace: 
             <p>Los principales hallazgos obtenidos a partir del análisis de datos en Power BI, destacando las tendencias más significativas y los insights clave sobre el rendimiento de los jugadores en la NBA. Además, identificamos posibles áreas para futuros análisis, como la integración de datos en tiempo real, modelos predictivos de desempeño o análisis comparativos con ligas internacionales.</p>
         </li>
     </ol>
+       <li>
+            <h2><strong>Dashboard en Versión Móvil 📊📱</strong></h2>
+            <p>Hemos creado un dashboard móvil que te permite ver estadísticas detalladas de jugadores de la NBA desde tu teléfono o tableta. Este dashboard te proporciona toda la información que necesitas sobre el rendimiento de los jugadores, estés donde estés.</p>
+            <p>Decidimos qué estadísticas eran más importantes para los fanáticos de la NBA, como puntos por partido, asistencias, rebotes y porcentaje de tiros.</p>
+            <p>Pensamos en cómo organizar esta información de manera que fuera fácil de leer en una pantalla pequeña.</p>
+            <p>Hicimos bocetos para ver cómo se verían las estadísticas en el teléfono, asegurándonos de que todo fuera claro y accesible.</p>
+            <p>Diseñamos la disposición de los gráficos y tablas para que se adaptaran bien a diferentes tamaños de pantalla.</p>
+            <p>Se ajusto el dashboard para que fuera fácil de usar con el tacto. Los botones y controles están diseñados para ser tocados con precisión, y los filtros permiten seleccionar jugadores o estadísticas específicas sin complicaciones.</p>
+            <p>Incorporamos opciones para comparar estadísticas de diferentes jugadores con solo unos toques.</p>
+            <p>Probamos el dashboard en varios teléfonos y tabletas para asegurarnos de que se viera y funcionara bien en todos ellos.</p>
+            <p>Publicamos el dashboard en Power BI, asegurándonos de que estuviera disponible en la aplicación móvil para que cualquier usuario autorizado pudiera acceder a él.</p>
+            <p>Ahora tienes acceso a un dashboard móvil que te muestra estadísticas detalladas de jugadores de la NBA. Esta herramienta está diseñada para que puedas ver fácilmente la información que necesitas sobre el rendimiento de los jugadores, estés en casa o en movimiento. Todo está pensado para que sea fácil de usar y accesible desde tu teléfono o tableta.</p>
+        </li>
     </section>
