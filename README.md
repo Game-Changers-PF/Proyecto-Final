@@ -66,3 +66,131 @@ Desarrollamos la base de datos utilizando SQL Server Management Studio, verifica
         </p>
     </li>
 </ol>
+   <section id="contribuciones">
+        <h2 style="text-align: center; color: #333;">Actividades Realizadas 📊📱</h2>
+        <h3><strong>Sprint 1</strong></h3>
+        <ol>
+            <li>Creación del  repositorio público y compartirlo con el equipo</li>
+                 <p>Para facilitar la colaboración y el seguimiento del proyecto, se creó un repositorio público en GitHub y se compartió con el equipo.
+El repositorio se titula Game-Changers-PF/Proyecto-Final el cual se configuró como público para asegurar que todos los miembros del equipo tengan acceso completo.
+Se envió invitación a través de GitHub y una vez aceptada ya se tenía acceso al repositorio.
+El repositorio está disponible públicamente en GitHub en el siguiente enlace: https://github.com/Game-Changers-PF/Proyecto-Final
+                  </p>
+            <li>Identificar los archivos a usar y armar la estructura de carpetas a usar en el repositorio</li>
+                 <p>Para organizar eficientemente los archivos y recursos del proyecto, hemos definido una estructura de carpetas y hemos identificado los archivos principales a utilizar:</p>
+               <ul>
+                    <li>
+            <strong>README.md:</strong> Este archivo contiene la descripción principal del proyecto, incluyendo su propósito, instrucciones de instalación, y otros detalles relevantes.
+                    </li>
+                     <li>
+            <strong>.Vscode/:</strong> Esta carpeta contiene configuraciones específicas de Visual Studio Code, como ajustes de configuración y extensiones utilizadas para el desarrollo del proyecto.
+                    </li>
+                     <li>
+            <strong>Machine Learning/:</strong> Carpeta que contiene archivos relacionados con el desarrollo de modelos de aprendizaje automático, como scripts de entrenamiento, evaluación de modelos, y otros recursos asociados.
+                    </li>
+                    <li>
+            <strong>MachineLearningModel.ipynb:</strong> Archivo Jupyter Notebook que contiene código para actualizar o mejorar el modelo de aprendizaje automático existente.
+                    </li>
+                    <li>
+            <strong>Csv_filtrados/:</strong> Almacena los archivos CSV filtrados específicamente para el análisis de datos.
+                    </li>
+                    <li>
+            <strong>Csv_originales/:</strong> Contiene los archivos CSV originales sin procesar, utilizados como datos de entrada para el proyecto.
+                    </li>
+                     <li>
+               <strong>Diseños/:</strong> Contiene el logo del proyecto.
+                    </li>
+                     <li>
+            <strong>Limpieza/:</strong> Contiene scripts y archivos relacionados con la limpieza de datos, incluyendo procesos ETL (Extract, Transform, Load).
+                    </li>
+                    <li>
+            <strong>Myenv/:</strong> Contiene el entorno virtual myenv utilizado para gestionar las dependencias y el ambiente de desarrollo específico del proyecto.
+                    </li>
+                     <li>
+            <strong>Conexion_API_y_consulta.ipynb:</strong> Archivo Jupyter Notebook que contiene código para la conexión a una API externa y la consulta de datos, lo cual nos aportó un valor agregado al archivo brindado por Henry.
+                    </li>
+                    <li>
+            <strong>Matriz correlacion.png:</strong> Imagen que muestra una matriz de correlación utilizada para visualizar las relaciones entre variables en el análisis de datos.
+                    </li>
+          </ul>
+         <li>
+            <strong>Creación base de datos SQL Management Studio</strong>
+            <p>Creamos la base de datos en SQL y para asegurarnos de que todo el equipo pueda conectarse a la misma configuramos las credenciales de cada miembro para acceder al servidor SQL. Esto implica proporcionar nombres de usuario y contraseñas adecuadas.</p>
+        </li>
+        <li>
+            <strong>Entidades/tablas que se usaron en la BD</strong>
+            <p>Se generó el modelo relacional con todas las tablas y sus relaciones.</p>
+        </li>
+        <li>
+            <strong>Crear las tablas y objetos SQL necesarios</strong>
+            <p>Creámos las estructuras de datos necesarias para almacenar información sobre equipos, jugadores y partidos relacionados con la NBA.</p>
+        </li>
+        <li>
+            <strong>Flujo de importación de los datos a la base de datos</strong>
+            <p>Los datos que importamos provienen de fuentes diversas, como archivos CSV descargados de sitios oficiales de la NBA, servicios web que proporcionan actualizaciones en tiempo real de estadísticas de jugadores y partidos, o incluso ingreso manual de datos.
+                Utilizamos scripts y herramientas para extraer los datos del origen y se realizaron transformaciones básicas para limpiar o estructurar los datos antes de cargarlos en la base.</p>
+        </li>
+        <li>
+            <strong>Validación de acceso a la base de datos</strong>
+            <p>Nos aseguramos de que todos los miembros del equipo puedan acceder correctamente a la base de datos de la NBA para realizar sus análisis y consultas. 
+                Definimos qué usuarios específicos tienen acceso a la base de datos y qué tipo de permisos tienen (lectura, escritura, administración, etc.).
+                Se configuró el firewall y las reglas de red para que solo las personas autorizadas puedan acceder de manera segura y protegida a la información almacenada en esa base de datos.</p>
+        </li>
+        <li>
+            <strong>Creación método de automatización de ingesta de datos nuevos</strong>
+            <p>Se importan las librerías necesarias para trabajar con archivos CSV, bases de datos SQL Server, AWS S3, y para cargar variables de entorno desde un archivo .env usando dotenv.
+                Conectamos con la base de datos SQL Server (connect_to_database() usando las credenciales y detalles de conexión del archivo .env. y utilizamos pyodbc para la conexión ODBC.
+                Leemos el archivo CSV almacenado en un bucket de Amazon S3 especificado (read_csv_from_s3(bucket_name, key) y con boto3 interactuamos con S3 y pandas para leer el archivo CSV en un DataFrame.
+                Insertamos los datos del DataFrame en la tabla especificada en la base de datos. Construimos y ejecutamos una consulta SQL de inserción para cada fila del DataFrame y automatizamos el proceso completo de carga de datos, primero leemos el archivo CSV desde S3 (read_csv_from_s3), luego insertamos los datos en la base de datos (insert_data_to_database), se devuelve un diccionario con un estado de código y un mensaje indicando si la operación fue exitosa o si ocurrió algún error.
+                Definimos los parámetros (bucket_name, key, table_name) necesarios para la carga de datos dentro de un bloque que se ejecutará solo cuando se ejecuta el archivo.
+                Llamamos a la función principal y mostramos la respuesta que indica si la operación fue exitosa o si hubo algún error.</p>
+        </li>
+        </ol>
+               <h3><strong>Sprint 2</strong></h3>
+               <ol>
+        <li>
+            <strong>Creación del archivo .pbix en Power BI</strong>
+            <p>Creamos un archivo .pbix en Power BI como nuestro centro de análisis para datos estadísticos detallados de jugadores en la NBA.</p>
+        </li>
+        <li>
+            <strong>Importación e integración de datos</strong>
+            <p>Importamos datos detallados de juegos, rendimiento de jugadores, estadísticas de equipos, porcentajes de tiros, rebotes y otras métricas clave desde fuentes confiables como una API de la NBA que se consiguió, bases de datos y CSV de juegos y salarios.</p>
+        </li>
+        <li>
+            <strong>Limpieza y preparación de datos</strong>
+            <p>Aplicamos procesos de limpieza y transformación para asegurar que los datos estén consistentes y libres de errores. Esto incluye la corrección de formatos, la eliminación de datos duplicados y la estandarización de nombres y categorías para facilitar el análisis.</p>
+        </li>
+        <li>
+            <strong>Creación de medidas/columnas/relaciones</strong>
+            <p>Se crearon medidas y cálculos que permiten evaluar el rendimiento de los jugadores en diferentes aspectos del juego, como puntos anotados por partido, porcentaje de tiros de campo, efectividad en tiros de tres puntos, promedio de rebotes por juego, asistencias, robos de balón, y bloqueos, entre otros.</p>
+        </li>
+        <li>
+            <strong>Diseño de reportes y gráficos a usar</strong>
+            <p>Diseñamos reportes interactivos y visualizaciones gráficas que muestran de manera clara y comprensible las estadísticas y el rendimiento de los jugadores. Estas visualizaciones incluyen gráficos de barras, gráficos de líneas, araña, tarjetas y tablas dinámicas que permiten a los usuarios explorar los datos desde diferentes perspectivas.</p>
+        </li>
+        <li>
+            <strong>Análisis general del tablero</strong>
+            <p>Creamos paneles de control personalizados en Power BI que permiten a gerentes, técnicos y otros interesados en la compra de jugadores acceder fácilmente a las estadísticas clave y a un ranking de los 10 mejores jugadores. Estos paneles pueden incluir resúmenes de salarios, comparativas entre jugadores, análisis histórico de desempeño y recomendaciones basadas en datos.</p>
+        </li>
+        <li>
+            <strong>Pruebas de calidad del reporte</strong>
+            <p>Realizamos pruebas exhaustivas para validar la precisión de los datos y la funcionalidad de los reportes. Aseguramos que todas las métricas calculadas sean precisas y reflejen correctamente el desempeño real de los jugadores.</p>
+        </li>
+        <li>
+            <strong>Entrega y soporte continuo</strong>
+            <p>Entregamos el archivo .pbix finalizado junto con documentación detallada sobre su uso y mantenimiento. Proporcionamos soporte continuo para responder preguntas y realizar ajustes según las necesidades específicas de los usuarios.</p>
+        </li>
+        <li>
+            <strong>Vistas del tablero</strong>
+            <p>Creamos vistas específicas dentro de nuestros paneles en Power BI que permiten a gerentes, técnicos y otros interesados en la compra de jugadores acceder fácilmente a las estadísticas clave. Estos paneles pueden incluir resúmenes ejecutivos, comparativas entre jugadores, análisis histórico de desempeño y recomendaciones basadas en datos.</p>
+        </li>
+        <li>
+            <strong>Pruebas de calidad del reporte</strong>
+            <p>Realizamos pruebas para validar la precisión de los datos y la funcionalidad de los reportes en Power BI. Aseguramos que todas las métricas calculadas sean precisas y reflejen correctamente el desempeño real de los jugadores.</p>
+        </li>
+        <li>
+            <strong>Resultados principales y líneas futuras de análisis</strong>
+            <p>Los principales hallazgos obtenidos a partir del análisis de datos en Power BI, destacando las tendencias más significativas y los insights clave sobre el rendimiento de los jugadores en la NBA. Además, identificamos posibles áreas para futuros análisis, como la integración de datos en tiempo real, modelos predictivos de desempeño o análisis comparativos con ligas internacionales.</p>
+        </li>
+    </ol>
+    </section>
