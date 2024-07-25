@@ -141,8 +141,7 @@ Desarrollamos la base de datos utilizando SQL Server Management Studio, verifica
             <p>Implementamos procesos de actualización automática de los datos para garantizar que el dashboard esté siempre actualizado con la información más reciente. Configuramos actualizaciones programadas que sincronizan los datos en tiempo real.</p>
         </li>
     </ol>
-
-    <h3><strong>Dashboard en Versión Móvil 📊📱</strong></h3>
+      <h3><strong>Dashboard en Versión Móvil 📊📱</strong></h3>
     <p>Hemos creado un dashboard móvil que te permite ver estadísticas detalladas de jugadores de la NBA desde tu teléfono o tableta. Este dashboard te proporciona toda la información que necesitas sobre el rendimiento de los jugadores, estés donde estés.</p>
     <p>Decidimos qué estadísticas eran más importantes para los fanáticos de la NBA, como puntos por partido, asistencias, rebotes y porcentaje de tiros.</p>
     <p>Pensamos en cómo organizar esta información de manera que fuera fácil de leer en una pantalla pequeña.</p>
